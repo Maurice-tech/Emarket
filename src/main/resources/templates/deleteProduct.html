@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>View Product</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-top: 70px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 60%;
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #333;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    form {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* CSS for the navigation bar */
+    .form2 ul.navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333; /* Background color for the navbar */
+      overflow: hidden;
+    }
+
+    .form2 li.nav-item {
+      float: left;
+    }
+
+    .form2 li.nav-item a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .form2 li.nav-item a:hover {
+      background-color: #555; /* Background color on hover */
+    }
+
+    /* Move the "Register" and "Login" links to the right */
+    .form2 li.nav-item.about,
+    .form2 li.nav-item.contact {
+      float: right;
+    }
+    button{
+      margin-right: 0;
+    }
+
+    button {
+      background-color: #008CBA;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form2">
+  <form action="/admin_homepage" method="post">
+    <ul class="navbar">
+      <li class="nav-item admin_homepage"><a href="/admin_homepage">Home</a></li>
+      <li class="nav-item deleteProduct"><a href="/products">View Product</a></li>
+      <li class="nav-item addToStore"><a href="/add_product">Add to store</a></li>
+      <li class="nav-item about"><a href="/about">About Us</a></li>
+      <li class="nav-item contact"><a href="/contact">Contact</a></li>
+    </ul>
+  </form>
+</div>
+
+<h1>Delete product</h1>
+
+<form action="/delete_products" method="get">
+  <table>
+    <thead>
+    <tr>
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Delete</th>
+
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="product : ${productsRequest}">
+      <td th:text="${product.id}"></td>
+      <td th:text="${product.productName}"></td>
+      <td th:text="${product.price}"></td>
+      <td th:text="${product.quantity}"></td>
+      <td>
+        <form th:action="@{/products/__${product.id}__}" method="post">
+          <input type="hidden" name="_method" value="delete"/>
+          <button type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</form>
+
+</body>
+</html>

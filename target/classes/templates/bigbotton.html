@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homepage</title>
+  <style>
+    body{
+      background-image: url("../static/pictures/homepage_picture.jpeg");
+      background-size: cover;
+    }
+
+    .welcome{
+      text-align: center;
+      color: black;
+      margin-top: 80px;
+    }
+
+    /* Add the "buts" class to the container */
+    .buts {
+      text-align: center;
+    }
+
+    /* CSS for the navigation bar */
+    ul.navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333; /* Background color for the navbar */
+      overflow: hidden;
+    }
+
+    li.nav-item {
+      float: left;
+    }
+
+    li.nav-item a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li.nav-item a:hover {
+      background-color: #555; /* Background color on hover */
+    }
+
+    /* Move the "Register" and "Login" links to the right */
+    li.nav-item.about,
+    li.nav-item.contact {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+<ul class="navbar">
+  <li class="nav-item"><a href="/homePage">Home</a></li>
+  <li class="nav-item about"><a href="/about">About Us</a></li>
+  <li class="nav-item"><a href="/services">Services</a></li>
+  <li class="nav-item contact"><a href="/contact">Contact</a></li>
+</ul>
+
+<!-- Wrap the welcome message and other content in a container with the "buts" class -->
+<div class="buts">
+  <div class="welcome">
+    <h1>Welcome to Admin homepage</h1>
+  </div>
+  <!-- Add other content here if needed -->
+</div>
+
+</body>
+</html>

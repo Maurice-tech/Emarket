@@ -1,0 +1,159 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--  <title>Horizontal Form</title>-->
+<!--  <style>-->
+<!--    .container {-->
+<!--      display: flex;-->
+<!--      justify-content: center; /* Center the form horizontally */-->
+<!--      align-items: center; /* Center the form vertically */-->
+<!--      height: 80vh; /* Adjust the height as needed */-->
+<!--    }-->
+
+<!--    .form {-->
+<!--      text-align: center;-->
+<!--    }-->
+
+<!--    .input-box {-->
+<!--      display: inline-block;-->
+<!--      margin: 10px; /* Adjust the spacing between fields */-->
+<!--    }-->
+
+<!--    input[type="text"],-->
+<!--    input[type="email"],-->
+<!--    input[type="password"] {-->
+<!--      width: 270px; /* Adjust the width of the input fields as needed */-->
+<!--      padding: 5px;-->
+<!--      border: 1px solid #ccc;-->
+<!--      border-radius: 3px;-->
+<!--    }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--  <div class="form">-->
+<!--    <form action="/ad_register" method="post" th:object="${registerRequest}">-->
+<!--      <h2>TO ADD PRODUCT TO STORE</h2>-->
+<!--      <div class="input-box">-->
+<!--        <input type="text" name="Product_name" placeholder="Product name" required>-->
+<!--      </div>-->
+<!--      <div class="input-box">-->
+<!--        <input type="text" name="Product_Price" placeholder="Product Price" required>-->
+<!--      </div>-->
+<!--      <div class="input-box">-->
+<!--        <input type="text" name="product_quantity" placeholder="Product Quantity">-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Horizontal Form</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center; /* Center the form horizontally */
+      align-items: center; /* Center the form vertically */
+      height: 80vh; /* Adjust the height as needed */
+    }
+    button{
+      width: 120px;
+      height: 32px;
+      border: 3px solid black;
+
+    }
+
+
+    .form {
+      text-align: center;
+    }
+    .container{
+      margin-top: 10px;
+    }
+    .input-box {
+      display: inline-block;
+      margin: 1px; /* Adjust the spacing between fields */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+      width: 270px; /* Adjust the width of the input fields and button as needed */
+      padding: 5px;
+      border: 3px solid black;
+      border-radius: 3px;
+    }
+
+    /* CSS for the navigation bar */
+    .form2 ul.navbar {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #333; /* Background color for the navbar */
+      overflow: hidden;
+    }
+
+    .form2 li.nav-item {
+      float: left;
+    }
+
+    .form2 li.nav-item a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .form2 li.nav-item a:hover {
+      background-color: #555; /* Background color on hover */
+    }
+
+    /* Move the "Register" and "Login" links to the right */
+    .form2 li.nav-item.about,
+    .form2 li.nav-item.contact {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+<div class="form2">
+    <ul class="navbar">
+      <li class="nav-item admin_homepage"><a href="/admin_homepage">Home</a></li>
+      <li class="nav-item deleteProduct"><a href="/delete_products">Delete Product</a></li>
+      <li class="nav-item viewProduct"><a href="/products">View Product</a></li>
+      <li class="nav-item about"><a href="/about">About Us</a></li>
+      <li class="nav-item contact"><a href="/contact">Contact</a></li>
+    </ul>
+</div>
+
+<div class="container">
+  <div class="form">
+    <form action="/add_product" method="post" th:object="${registerRequest}">
+      <h2>TO ADD PRODUCT TO STORE</h2>
+      <div class="input-box">
+        <input type="text" name="productName" placeholder="Product name" required>
+      </div>
+      <div class="input-box">
+        <input type="text" name="price" placeholder="Product Price" required>
+      </div>
+      <div class="input-box">
+        <input type="text" name="quantity" placeholder="Product Quantity">
+      </div>
+
+      <div class = "input-box">
+        <button>
+          update product
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
+

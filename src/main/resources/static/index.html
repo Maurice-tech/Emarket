@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <style>
+        body{
+            background-image: url("pictures/homepage_picture.jpeg");
+            background-size: cover;
+        }
+        .welcome{
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+        /* CSS for the navigation bar */
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333; /* Background color for the navbar */
+            overflow: hidden;
+        }
+
+        li.nav-item {
+            float: left;
+        }
+
+        li.nav-item a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li.nav-item a:hover {
+            background-color: #555; /* Background color on hover */
+        }
+
+        /* Move the "Register" and "Login" links to the right */
+
+        li.nav-item.admin_login{
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+<ul class="navbar">
+    <li class="nav-item static"><a href="/">Home</a></li>
+    <li class="nav-item admin_login"><a href="/admin_login">Admin Only</a></li>
+    <li class="nav-item register"><a href="/register">Register</a></li>
+    <li class="nav-item login"><a href="/login">Login</a></li>
+    <li class="nav-item add_to_cart">
+    </li>
+</ul>
+
+<div class="welcome">
+<h1>Welcome to homepage</h1>
+</div>
+
+</body>
+</html>
